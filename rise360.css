@@ -1,0 +1,314 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  height: 100vh;
+  box-sizing: border-box;
+  color: #333;
+}
+
+/* Header */
+header {
+  background-color: #f8f8f8;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #e2e2e2;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: #333;
+}
+
+.main-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 8px;
+  font-weight: 500;
+}
+
+.ai-assistant-btn {
+  padding: 10px 15px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.preview-btn {
+  padding: 10px 15px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+/* Main Content */
+.main-content {
+  padding: 20px;
+  max-width: 900px; /* Largeur centrale */
+  margin: 0 auto; /* Marges automatiques pour centrer */
+  overflow-y: auto;
+}
+
+
+/* Introduction Section */
+.intro-section {
+  margin-bottom: 30px;
+}
+
+.intro-section h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.intro-section .author {
+  margin-bottom: 20px;
+}
+
+.author-name {
+  font-weight: bold;
+  color: #666;
+}
+
+/* List of Resources */
+.resources-section {
+  margin-top: 40px;
+}
+
+.resources-section h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.resource {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e2e2;
+  position: relative; /* Pour positionner les 3 points par rapport à la resource */
+}
+
+/* Nouveau conteneur pour le titre et le type de leçon */
+.resource-info {
+  display: flex;
+  flex-direction: column; /* Empile les éléments verticalement */
+}
+
+.resource-title {
+  display: block; /* Forcer le titre à occuper toute la largeur */
+  font-weight: bold;
+}
+
+.edit-btn {
+  padding: 8px 12px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  position: absolute; /* Permet de positionner les boutons précisément */
+  right: 30px; /* Place les boutons près de la droite avec un espace pour les 3 points */
+}
+
+.edit-btn:hover {
+  background-color: #005bb5;
+}
+
+
+.ai-assistant-btn, .preview-btn {
+  padding: 10px 20px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 20px; /* Bordures arrondies */
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Espace entre l'icône et le texte */
+  transition: background-color 0.3s ease;
+}
+
+.ai-assistant-btn:hover, .preview-btn:hover {
+  background-color: #005bb5;
+}
+
+.resource-title i {
+  color: #666;
+  margin-right: 8px;
+}
+
+.lesson-type {
+  display: block; /* Forcer le type de leçon à s'afficher sous le titre */
+    color: #ccc;
+    font-size: 12px;
+    margin-top: 5px; /* Ajouter un peu d'espace entre le titre et le type de leçon */
+    padding-left: 35px;
+}
+
+/* Points de suspension au survol */
+.menu-btn {
+  visibility: hidden;
+  cursor: pointer;
+/*  margin-left: -350px;  /* Réduire l'écart entre le bouton et les trois points */
+position: absolute;
+right: 0; /* Positionne les 3 points complètement à droite */
+margin-left: 15px;
+  
+}
+
+/* Afficher les points de suspension au survol de la ressource */
+.resource:hover .menu-btn {
+  visibility: visible;
+}
+
+/* Cacher le menu contextuel par défaut */
+.context-menu {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+  padding: 10px;
+  border-radius: 4px;
+  z-index: 1;
+  margin-top: 100px; /* Un peu d'espace entre les trois points et le menu */
+  right: 0; /* Positionner sous les trois points */
+}
+
+/* Afficher le menu uniquement au survol des trois points ou du menu lui-même */
+.menu-btn:hover + .context-menu,
+.context-menu:hover {
+    display: block;
+}
+
+
+.context-menu a {
+  color: #333;
+  text-decoration: none;
+  display: block;
+  padding: 5px;
+}
+
+.context-menu a:hover {
+  background-color: #f1f1f1;
+}
+
+
+
+/* Style pour les onglets */
+.tabs-container {
+  margin-top: 20px;
+}
+
+.tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  border-bottom: 2px solid #ddd;
+}
+
+.tabs .tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  background-color: #f9f9f9;
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+.tabs .tab.active {
+  background-color: white;
+  border-bottom: 2px solid white; /* Effet de soulignement pour l'onglet actif */
+}
+
+.tabs .tab:hover {
+  background-color: #f0f0f0;
+}
+
+/* Style pour le contenu des onglets */
+.tab-content {
+  display: none;
+  padding: 20px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-top: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tab-content img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+/* Style de la bibliothèque de blocs */
+.block-library {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+/* Style pour chaque outil (bloc) */
+.block-tool {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.block-tool i {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.block-tool p {
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+/* Effet de survol pour les outils */
+.block-tool:hover {
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}

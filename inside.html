@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started With Rise 360</title>
+    
+    <link rel="stylesheet" href="rise360.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo"><a href="articulate.html"><i class="fa-solid fa-list"></i></a> Getting Started With Rise 360</div>
+        <nav class="main-nav">
+          <a href="#"><i class="fa-regular fa-comment"></i></a>
+          <a href="#"><i class="fa-solid fa-brush"></i></a>
+          <a href="#"><i class="fa-solid fa-gear"></i></a>
+          <a href="#">Share</a>
+          <a href="#">Review</a>
+          <a href="#">Publish</a>
+          <button class="ai-assistant-btn"><i class="fas fa-robot"></i> AI Assistant</button>
+          <button class="preview-btn"><i class="fa-solid fa-play"></i> Preview</button>
+      </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <div class="tabs-container">
+        <ul class="tabs">
+            <li class="tab active" data-tab="tab-1">Embracing Discovery</li>
+            <li class="tab" data-tab="tab-2">Gaining Insight</li>
+            <li class="tab" data-tab="tab-3">Making It Real</li>
+        </ul>
+    
+        <!-- Contenu des onglets -->
+        <div class="tab-content active" id="tab-1">
+            <p>Every creative endeavor requires that you take risks. If you try and don't succeed, you've still learned something. It took Thomas Edison more than 10,000 tries to invent a viable lightbulb. You're not failing. You're discovering what doesn't work.</p>
+            <img src="https://via.placeholder.com/800x400" alt="Image of a paraglider in the mountains">
+        </div>
+    
+        <div class="tab-content" id="tab-2">
+            <p>Gaining insight is crucial to improving your process. Reflect on your successes and failures, and use that knowledge to push your work further.</p>
+        </div>
+    
+        <div class="tab-content" id="tab-3">
+            <p>Making it real means taking your vision and turning it into something tangible. This is where creativity meets execution.</p>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="block-library">
+      <div class="block-tool">
+          <i class="fas fa-cube"></i>
+          <p>AI Block</p>
+      </div>
+      <div class="block-tool">
+          <i class="fas fa-image"></i>
+          <p>AI Image</p>
+      </div>
+      <div class="block-tool">
+          <i class="fas fa-font"></i>
+          <p>Text</p>
+      </div>
+      <div class="block-tool">
+          <i class="fas fa-list"></i>
+          <p>List</p>
+      </div>
+      <div class="block-tool">
+          <i class="fas fa-video"></i>
+          <p>Video</p>
+      </div>
+      <div class="block-tool">
+          <i class="fas fa-flask"></i>
+          <p>Process</p>
+      </div>
+      <div class="block-tool">
+          <i class="fas fa-images"></i>
+          <p>Flashcards</p>
+      </div>
+      <div class="block-tool">
+          <i class="fas fa-sort"></i>
+          <p>Sorting</p>
+      </div>
+      <div class="block-tool">
+          <i class="fas fa-map-marker-alt"></i>
+          <p>Labeled Graphic</p>
+      </div>
+      <div class="block-tool">
+          <i class="fas fa-arrow-right"></i>
+          <p>Continue</p>
+      </div>
+  </div>
+  
+    </main>
+
+
+    <script>
+      // Récupère tous les éléments des onglets
+      const tabs = document.querySelectorAll('.tab');
+      const tabContents = document.querySelectorAll('.tab-content');
+  
+      // Ajouter un gestionnaire d'événements pour chaque onglet
+      tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+              // Retirer l'état actif de tous les onglets
+              tabs.forEach(t => t.classList.remove('active'));
+              // Masquer tous les contenus d'onglets
+              tabContents.forEach(content => content.classList.remove('active'));
+  
+              // Activer l'onglet cliqué
+              tab.classList.add('active');
+              // Afficher le contenu correspondant à l'onglet cliqué
+              const target = tab.getAttribute('data-tab');
+              document.getElementById(target).classList.add('active');
+          });
+      });
+  </script>
+  
+</body>
+</html>

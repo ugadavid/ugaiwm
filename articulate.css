@@ -20,6 +20,11 @@ header {
   border-bottom: 1px solid #e2e2e2;
 }
 
+a {
+  color: #f8f8f8;
+  text-decoration: none;
+}
+
 .logo {
   font-weight: bold;
   font-size: 22px;
@@ -142,7 +147,10 @@ main {
 }
 
 .content-header {
-  margin-bottom: 20px;
+  display: flex;
+    align-items: center;
+    gap: 10px; /* Espace entre le champ et le bouton */
+    margin-bottom: 20px;
 }
 
 .content-header input {
@@ -151,6 +159,21 @@ main {
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 14px;
+}
+
+.search-btn {
+  padding: 10px 15px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.search-btn:hover {
+  background-color: #005bb5;
 }
 
 /* Course Cards */

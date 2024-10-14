@@ -1,0 +1,90 @@
+/* Conteneur principal de la page de profil */
+.profile-page {
+  display: flex;
+  padding: 20px;
+}
+
+/* Menu latéral */
+.sidebar {
+  width: 250px;
+  background-color: #f8f8f8;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar li i {
+  margin-right: 10px;
+}
+
+.sidebar li:hover {
+  background-color: #eaeaea;
+  border-radius: 5px;
+}
+
+.beta-label {
+  background-color: #6200ea;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  margin-left: 5px;
+  border-radius: 3px;
+}
+
+/* Contenu du profil */
+.profile-content {
+  flex-grow: 1;
+  padding-left: 30px;
+}
+
+.profile-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  margin-right: 20px;
+}
+
+.profile-details h3, .articulate-id h3 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.profile-details p, .articulate-id p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.save-btn {
+  padding: 10px 20px;
+  background-color: #0073e6;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.save-btn:hover {
+  background-color: #005bb5;
+}
