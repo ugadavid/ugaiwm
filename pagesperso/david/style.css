@@ -1,0 +1,35 @@
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #121212;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+}
+
+#canvas {
+  border: 2px solid #fff;
+  display: block;
+}
+
+#title {
+  color: #fff;
+  position: absolute;
+  bottom: 20px;
+  font-size: 24px;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
