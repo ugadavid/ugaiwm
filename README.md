@@ -10,6 +10,7 @@
 - Cookies + RGPD
 - Styles : black, white, normal, contraste, psychedelic...
 - Faire n'importe quelle interraction avec GPT :D -> pourquoi pas un chat V 2000/ V 2024 :D
+- Pages perso
 
 ### Back home
 
