@@ -57,6 +57,7 @@
 - Pages perso
 - Approfondir le projet et faire collaborer Anas et Patrice
 - **Nettoyer CSS !!**
+- Faire un ou deux _vrai/faux_ module(s) SCORM
 
 ### Back home
 
