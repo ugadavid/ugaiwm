@@ -56,6 +56,7 @@
 - Mettre en place le didacticiel
 - Pages perso
 - Approfondir le projet et faire collaborer Anas et Patrice
+- **Nettoyer CSS !!**
 
 ### Back home
 
