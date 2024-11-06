@@ -59,6 +59,11 @@
 - **Nettoyer CSS !!**
 - Faire un ou deux _vrai/faux_ module(s) SCORM
 
+
+- https://www.youtube.com/watch?v=J2VjCywFC_U
+- https://www.tensorflow.org/js/tutorials/transfer/image_classification?hl=fr
+
+
 ### Back home
 
 **Description :** Projet central pour organiser et suivre tous mes autres projets.
