@@ -5,6 +5,9 @@
 
 **En local :** \Cours\M1\S1\06-07-IWM\projet
 
+## Le site
+https://ugadavid.github.io/ugaiwm/
+
 ## Projet (Deadline: 24/11/2024)
 
 - Groupe de 4
@@ -47,6 +50,7 @@
 - Rendu du projet
   - 24 Novembre 2024 (à confirmer)
   - Dépôt sur le serveur pédagogique (à préciser)
+
 
 ## Next steps
 
