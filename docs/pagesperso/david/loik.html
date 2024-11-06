@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suricates 360 - présentation déformée</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+    <link rel="stylesheet" href="styles/loik.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <p>We use cookies to enhance your experience on our website. By continuing to browse, you accept our <a href="#">cookie policy</a>.</p>
+        <button id="accept-cookies" class="cookie-btn">Accept Cookies</button>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo"><a href="../../index.html"><img src="../../images/logo.png" alt="Suricates 360 logo" width="150"></a></div>
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="../../rise360.html">Rise 360</a>
+            <a href="../../inside.html">Review 360</a>
+            <a href="#">Reach 360</a>
+            <a href="#">Suricates 360 Training</a>
+        </nav>
+        <div class="user-info">
+            <select id="language-selector">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <!-- Ajouter d'autres langues ici -->
+            </select>
+            <button>Add Team Members to Your Trial</button>
+            <div class="profile">
+                <span><a href="../../profile.html">DA</a></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar and Main Content -->
+    <div class="content-wrapper">
+        <!-- Sidebar -->
+        <aside>
+            <button class="create-btn"><i class="fa-regular fa-user"></i></i> Pages persos</button>
+            <h3>David</h3>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Accueil</a></li>
+                <li><a href="loik.html"><i class="fa-regular fa-comments"></i>TensorFlow.js</a></li>
+                <li><a href="fractal.html"><i class="fa-solid fa-barcode"></i>Fractales I</a></li>
+                <li><a href="fractaltorus.html"><i class="fa-solid fa-barcode"></i>Fractales II</a></li>
+                <li><a href="tensflor.html"><i class="fa-regular fa-comment-dots"></i>Tensflor++</a></li>
+                <li><a href="https://www.linkedin.com/in/davidsubileau/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a></li>
+            </ul>
+        </aside>
+
+        <!-- Main Content -->
+        <main>
+            <div class="content-header">
+                <input type="text" placeholder="Search all content">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button id="toggle-theme" class="theme-btn">Dark Mode</button>
+            </div>
+            
+            <!-- Intro Section -->
+            <section class="intro-card course-card">
+                <div class="intro-info course-info">
+                  <h1>Détection de multiple objets en utilisant un modèle pré-entrainé avec TensorFlow.js</h1>
+                  <section id="demos" class="invisible">
+
+                    <p>Tenir des objets proche de la WebCam pour avoir une classification en temps réel! Quand ce sera prêt cliquer sur "Activer WebCam" en dessous et valider l'accès à la WebCam quand le navigateur le demandera (regarder en haut à gauche de votre fenêtre)</p>
+            
+                    <div id="liveView" class="camView">
+                        <button id="webcamButton">Activer WebCam</button>
+                        <video id="webcam" autoplay muted width="640" height="280"></video>
+                    </div>
+                </section>
+                </div>
+            </section>
+            <section class="intro-card course-card">
+                <div class="main-buttons"><button onClick="location.href='index.html'">Précédent</button>
+                    <button onClick="location.href='fractal.html'">Suivant</button></div>
+            </section>
+
+            
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Qui sommes-nous ?</a>
+            <a href="#">CGV</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#" id="modify-cookies">Modify Cookie Preferences</a>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Function to get a cookie by name
+        function getCookie(name) {
+            let cookieArr = document.cookie.split(";");
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookiePair = cookieArr[i].split("=");
+                if (name === cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+
+        // Display cookie banner if consent is not given
+        if (!getCookie("userConsent")) {
+            document.getElementById("cookie-banner").style.display = "block";
+        }
+
+        document.getElementById("accept-cookies").addEventListener("click", function() {
+            document.getElementById("cookie-banner").style.display = "none";
+            document.cookie = "userConsent=true; max-age=31536000; path=/";
+            // Setting default values for language and theme
+            document.cookie = "language=en; max-age=31536000; path=/";
+            document.cookie = "theme=light; max-age=31536000; path=/";
+        });
+
+        // Modify cookie preferences link
+        document.getElementById("modify-cookies").addEventListener("click", function() {
+            document.getElementById("cookie-banner").style.display = "block";
+        });
+
+        // Toggle theme button
+        document.getElementById("toggle-theme").addEventListener("click", function() {
+            const body = document.body;
+            const currentTheme = body.classList.contains("dark") ? "dark" : "light";
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            body.classList.toggle("dark");
+            document.cookie = `theme=${newTheme}; max-age=31536000; path=/`;
+            document.getElementById("toggle-theme").textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+        });
+
+        // Apply saved theme on page load
+        const savedTheme = getCookie("theme");
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark");
+            document.getElementById("toggle-theme").textContent = "Light Mode";
+        }
+
+
+    // Function to load JSON translation
+    async function loadTranslation(language) {
+    try {
+        const response = await fetch(`../../lang/${language}.json`);
+        const translations = await response.json();
+
+        if (document.getElementById("welcome-message")) {
+            document.getElementById("welcome-message").textContent = translations.welcome_message;
+        }
+        if (document.getElementById("description-1")) {
+            document.getElementById("description-1").textContent = translations.description_1;
+        }
+        if (document.getElementById("description-2")) {
+            document.getElementById("description-2").textContent = translations.description_2;
+        }
+        if (document.getElementById("search-input")) {
+            document.getElementById("search-input").setAttribute("placeholder", translations.search_placeholder);
+        }
+        if (document.getElementById("toggle-theme")) {
+            document.getElementById("toggle-theme").textContent = document.body.classList.contains("dark")
+                ? translations.light_mode
+                : translations.dark_mode;
+        }
+
+        // Store language preference in a cookie
+        document.cookie = `language=${language}; max-age=31536000; path=/`;
+        } catch (error) {
+            console.error("Error loading translation:", error);
+        }
+    }
+
+    // Load saved language or default to 'en'
+    const savedLanguage = getCookie("language") || "en";
+    loadTranslation(savedLanguage);
+
+    // Event listener for language change
+    document.getElementById("language-selector").addEventListener("change", function() {
+        loadTranslation(this.value);
+    });
+    </script>
+    
+
+    <!-- Import TensorFlow.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd" defer></script>
+
+
+    <!-- Import the page's JavaScript to do some stuff -->
+    <script src="scripts/loik.js" defer></script>
+</body>
+</html>

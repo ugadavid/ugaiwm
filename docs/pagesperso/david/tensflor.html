@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suricates 360 - présentation déformée</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+    
+    
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/mobilenet"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/knn-classifier"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+      .main-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+      }
+      .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      .webcam-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 20px;
+      }
+      #webcam {
+        border: 2px solid #6c757d;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      .confidence-bars {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+      #console {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 1.2em;
+        color: #343a40;
+      }
+      .chart-container {
+        width: 80%;
+        margin: 20px auto;
+      }
+    </style>
+</head>
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <p>We use cookies to enhance your experience on our website. By continuing to browse, you accept our <a href="#">cookie policy</a>.</p>
+        <button id="accept-cookies" class="cookie-btn">Accept Cookies</button>
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo"><a href="../../index.html"><img src="../../images/logo.png" alt="Suricates 360 logo" width="150"></a></div>
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="../../rise360.html">Rise 360</a>
+            <a href="../../inside.html">Review 360</a>
+            <a href="#">Reach 360</a>
+            <a href="#">Suricates 360 Training</a>
+        </nav>
+        <div class="user-info">
+            <select id="language-selector">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <!-- Ajouter d'autres langues ici -->
+            </select>
+            <button>Add Team Members to Your Trial</button>
+            <div class="profile">
+                <span><a href="../../profile.html">DA</a></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar and Main Content -->
+    <div class="content-wrapper">
+        <!-- Sidebar -->
+        <aside>
+          <button class="create-btn"><i class="fa-regular fa-user"></i></i> Pages persos</button>
+          <h3>David</h3>
+          <ul>
+              <li><a href="index.html"><i class="fa-solid fa-house"></i>Accueil</a></li>
+              <li><a href="loik.html"><i class="fa-regular fa-comments"></i>TensorFlow.js</a></li>
+              <li><a href="fractal.html"><i class="fa-solid fa-barcode"></i>Fractales I</a></li>
+              <li><a href="fractaltorus.html"><i class="fa-solid fa-barcode"></i>Fractales II</a></li>
+              <li><a href="tensflor.html"><i class="fa-regular fa-comment-dots"></i>Tensflor++</a></li>
+              <li><a href="https://www.linkedin.com/in/davidsubileau/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a></li>
+          </ul>
+      </aside>
+
+        <!-- Main Content -->
+        <main>
+            <div class="content-header">
+                <input type="text" placeholder="Search all content">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button id="toggle-theme" class="theme-btn">Dark Mode</button>
+            </div>
+            
+            <!-- Intro Section -->
+            <section class="intro-card course-card">
+                <div class="intro-info course-info">
+                  <h1>Classificateur d'images d'apprentissage par transfert avec tensorflow</h1>
+                  
+
+                  <div class="container">
+                    <div class="main-container">
+                      <div class="btn-group">
+                        <button id="class-a" class="tensflor-buttons">Add Example A</button>
+                        <button id="class-b" class="tensflor-buttons">Add Example B</button>
+                        <button id="class-c" class="tensflor-buttons">Add Example C</button>
+                        <button id="class-d" class="tensflor-buttons">Add Example D</button>
+                        <button id="save-data" class="tensflor-buttons">Save Classifier</button>
+                        <button id="load-data" class="tensflor-buttons">Load Classifier</button>
+                        <button id="reset-data" class="tensflor-buttons">Reset Classifier</button>
+                        <button id="fullscreen" class="tensflor-buttons">Fullscreen Mode</button>
+                        <button id="start-stop" class="tensflor-buttons">Stop</button>
+                      </div>
+                      <div class="webcam-container">
+                        <video id="webcam" autoplay playsinline width="320" height="240"></video>
+                        <div id="console"></div>
+                      </div>
+                      <div class="confidence-bars" id="confidence-bars"></div>
+                    </div>
+                    <div class="chart-container">
+                      <canvas id="predictionChart"></canvas>
+                    </div>
+                  </div>
+
+
+                </div>
+            </section>
+            <section class="intro-card course-card">
+                <div class="main-buttons"><button onClick="location.href='index.html'">Précédent</button>
+                    <button onClick="location.href='fractal.html'">Suivant</button></div>
+            </section>
+
+            
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Qui sommes-nous ?</a>
+            <a href="#">CGV</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#" id="modify-cookies">Modify Cookie Preferences</a>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Function to get a cookie by name
+        function getCookie(name) {
+            let cookieArr = document.cookie.split(";");
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookiePair = cookieArr[i].split("=");
+                if (name === cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+
+        // Display cookie banner if consent is not given
+        if (!getCookie("userConsent")) {
+            document.getElementById("cookie-banner").style.display = "block";
+        }
+
+        document.getElementById("accept-cookies").addEventListener("click", function() {
+            document.getElementById("cookie-banner").style.display = "none";
+            document.cookie = "userConsent=true; max-age=31536000; path=/";
+            // Setting default values for language and theme
+            document.cookie = "language=en; max-age=31536000; path=/";
+            document.cookie = "theme=light; max-age=31536000; path=/";
+        });
+
+        // Modify cookie preferences link
+        document.getElementById("modify-cookies").addEventListener("click", function() {
+            document.getElementById("cookie-banner").style.display = "block";
+        });
+
+        // Toggle theme button
+        document.getElementById("toggle-theme").addEventListener("click", function() {
+            const body = document.body;
+            const currentTheme = body.classList.contains("dark") ? "dark" : "light";
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            body.classList.toggle("dark");
+            document.cookie = `theme=${newTheme}; max-age=31536000; path=/`;
+            document.getElementById("toggle-theme").textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+        });
+
+        // Apply saved theme on page load
+        const savedTheme = getCookie("theme");
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark");
+            document.getElementById("toggle-theme").textContent = "Light Mode";
+        }
+
+
+    // Function to load JSON translation
+    async function loadTranslation(language) {
+    try {
+        const response = await fetch(`../../lang/${language}.json`);
+        const translations = await response.json();
+
+        if (document.getElementById("welcome-message")) {
+            document.getElementById("welcome-message").textContent = translations.welcome_message;
+        }
+        if (document.getElementById("description-1")) {
+            document.getElementById("description-1").textContent = translations.description_1;
+        }
+        if (document.getElementById("description-2")) {
+            document.getElementById("description-2").textContent = translations.description_2;
+        }
+        if (document.getElementById("search-input")) {
+            document.getElementById("search-input").setAttribute("placeholder", translations.search_placeholder);
+        }
+        if (document.getElementById("toggle-theme")) {
+            document.getElementById("toggle-theme").textContent = document.body.classList.contains("dark")
+                ? translations.light_mode
+                : translations.dark_mode;
+        }
+
+        // Store language preference in a cookie
+        document.cookie = `language=${language}; max-age=31536000; path=/`;
+        } catch (error) {
+            console.error("Error loading translation:", error);
+        }
+    }
+
+    // Load saved language or default to 'en'
+    const savedLanguage = getCookie("language") || "en";
+    loadTranslation(savedLanguage);
+
+    // Event listener for language change
+    document.getElementById("language-selector").addEventListener("change", function() {
+        loadTranslation(this.value);
+    });
+    </script>
+
+<script>
+  let appRunning = true;
+  let appInterval;
+  const classifier = knnClassifier.create();
+  const webcamElement = document.getElementById('webcam');
+  const predictionChartCtx = document.getElementById('predictionChart').getContext('2d');
+  const classes = ['A', 'B', 'C', 'D'];
+
+  // Create a chart to visualize prediction statistics
+  const predictionChart = new Chart(predictionChartCtx, {
+    type: 'bar',
+    data: {
+      labels: classes,
+      datasets: [{
+        label: 'Prediction Count',
+        data: [0, 0, 0, 0],
+        backgroundColor: ['rgba(54, 162, 235, 0.2)', 'rgba(75, 192, 192, 0.2)', 'rgba(255, 206, 86, 0.2)', 'rgba(255, 99, 132, 0.2)'],
+        borderColor: ['rgba(54, 162, 235, 1)', 'rgba(75, 192, 192, 1)', 'rgba(255, 206, 86, 1)', 'rgba(255, 99, 132, 1)'],
+        borderWidth: 1
+      }]
+    },
+    options: {
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+
+  async function app() {
+    console.log('Loading mobilenet..');
+
+    // Load the model.
+    net = await mobilenet.load();
+    console.log('Successfully loaded model');
+
+    // Create an object from Tensorflow.js data API which could capture image from the web camera as Tensor.
+    const webcam = await tf.data.webcam(webcamElement);
+
+    // Reads an image from the webcam and associates it with a specific class index.
+    const addExample = async classId => {
+      // Capture an image from the web camera.
+      const img = await webcam.capture();
+
+      // Get the intermediate activation of MobileNet 'conv_preds' and pass that to the KNN classifier.
+      const activation = net.infer(img, true);
+
+      // Pass the intermediate activation to the classifier.
+      classifier.addExample(activation, classId);
+
+      // Dispose the tensor to release the memory.
+      img.dispose();
+    };
+
+    // When clicking a button, add an example for that class.
+    document.getElementById('class-a').addEventListener('click', () => addExample(0));
+    document.getElementById('class-b').addEventListener('click', () => addExample(1));
+    document.getElementById('class-c').addEventListener('click', () => addExample(2));
+    document.getElementById('class-d').addEventListener('click', () => addExample(3));
+
+    // Save classifier data
+    document.getElementById('save-data').addEventListener('click', () => {
+      const dataset = classifier.getClassifierDataset();
+      const datasetObj = {};
+      Object.keys(dataset).forEach(key => {
+        datasetObj[key] = dataset[key].arraySync();
+      });
+      const jsonStr = JSON.stringify(datasetObj);
+      localStorage.setItem('knnClassifier', jsonStr);
+      Swal.fire('Saved!', 'Classifier data saved successfully!', 'success');
+    });
+
+    // Load classifier data
+    document.getElementById('load-data').addEventListener('click', () => {
+      const jsonStr = localStorage.getItem('knnClassifier');
+      if (jsonStr) {
+        const datasetObj = JSON.parse(jsonStr);
+        const dataset = {};
+        Object.keys(datasetObj).forEach(key => {
+          dataset[key] = tf.tensor(datasetObj[key]);
+        });
+        classifier.setClassifierDataset(dataset);
+        Swal.fire('Loaded!', 'Classifier data loaded successfully!', 'success');
+      } else {
+        Swal.fire('Oops!', 'No saved classifier data found!', 'error');
+      }
+    });
+
+    // Reset classifier data
+    document.getElementById('reset-data').addEventListener('click', () => {
+      classifier.clearAllClasses();
+      Swal.fire('Reset!', 'Classifier has been reset!', 'info');
+      predictionChart.data.datasets[0].data = [0, 0, 0, 0];
+      predictionChart.update();
+    });
+
+    // Add keyboard shortcuts for adding examples
+    document.addEventListener('keydown', (event) => {
+      switch (event.key) {
+        case '1':
+          addExample(0);
+          break;
+        case '2':
+          addExample(1);
+          break;
+        case '3':
+          addExample(2);
+          break;
+        case '4':
+          addExample(3);
+          break;
+      }
+    });
+
+    // Add confidence indicator as progress bars
+    const confidenceBarsContainer = document.getElementById('confidence-bars');
+    const confidenceBars = classes.map((className, index) => {
+      const container = document.createElement('div');
+      container.classList.add('progress', 'my-1');
+      const label = document.createElement('span');
+      label.innerText = `Confidence for ${className}: `;
+      const progressBar = document.createElement('div');
+      progressBar.classList.add('progress-bar');
+      progressBar.role = 'progressbar';
+      progressBar.style.width = '0%';
+      progressBar.ariaValueNow = '0';
+      progressBar.ariaValueMin = '0';
+      progressBar.ariaValueMax = '100';
+      container.appendChild(progressBar);
+      confidenceBarsContainer.appendChild(label);
+      confidenceBarsContainer.appendChild(container);
+      return progressBar;
+    });
+
+    // Main application loop
+    async function runApp() {
+      if (appRunning) {
+        if (classifier.getNumClasses() > 0) {
+          const img = await webcam.capture();
+
+          // Get the activation from mobilenet from the webcam.
+          const activation = net.infer(img, 'conv_preds');
+          // Get the most likely class and confidence from the classifier module.
+          const result = await classifier.predictClass(activation);
+
+          document.getElementById('console').innerText = `
+            Prediction: ${classes[result.label]}
+            Probability: ${(result.confidences[result.label] * 100).toFixed(2)}%
+          `;
+
+          // Update the chart with the prediction result
+          predictionChart.data.datasets[0].data[result.label]++;
+          predictionChart.update();
+
+          // Update confidence bars
+          classes.forEach((className, index) => {
+            const confidence = result.confidences[index] * 100;
+            confidenceBars[index].style.width = `${confidence}%`;
+            confidenceBars[index].ariaValueNow = confidence.toFixed(2);
+            confidenceBars[index].innerText = `${confidence.toFixed(2)}%`;
+          });
+
+          // Dispose the tensor to release the memory.
+          img.dispose();
+        }
+
+        await tf.nextFrame();
+        appInterval = requestAnimationFrame(runApp);
+      }
+    }
+
+    appInterval = requestAnimationFrame(runApp);
+  }
+
+  // Add fullscreen mode functionality
+  document.getElementById('fullscreen').addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  });
+
+  // Start/Stop button functionality
+  document.getElementById('start-stop').addEventListener('click', () => {
+    if (appRunning) {
+      appRunning = false;
+      cancelAnimationFrame(appInterval);
+      document.getElementById('start-stop').innerText = 'Start';
+      document.getElementById('start-stop').classList.remove('btn-outline-danger');
+      document.getElementById('start-stop').classList.add('btn-outline-success');
+      alert('Stop!');
+    } else {
+      appRunning = true;
+      appInterval = requestAnimationFrame(runApp);
+      document.getElementById('start-stop').innerText = 'Stop';
+      document.getElementById('start-stop').classList.remove('btn-outline-success');
+      document.getElementById('start-stop').classList.add('btn-outline-danger');
+      alert('Stop!');
+    }
+  });
+
+  app();
+</script>
+    
+
+    <!-- Import TensorFlow.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
+    <!-- Load the coco-ssd model to use to recognize things in images -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd" defer></script>
+
+
+    <!-- Import the page's JavaScript to do some stuff -->
+    <script src="scripts/loik.js" defer></script>
+</body>
+</html>

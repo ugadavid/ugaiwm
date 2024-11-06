@@ -1,0 +1,20 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  height: 100vh;
+  margin: 0;
+  background-color: #000;
+}
+canvas {
+  border: 2px solid #fff;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+font-size: 18px
+}

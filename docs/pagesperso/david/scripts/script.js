@@ -2,13 +2,13 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 
 canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+canvas.height = window.innerHeight - 400;
 
 const img = new Image();
-img.src = "portrait.png"; // Remplace avec le chemin vers ton image
+img.src = "assets/images/image.png"; // Mon image
 
 // Charger le son et configurer la répétition en boucle
-let vent = new Audio("vent.mp3");
+let vent = new Audio("assets/sons/vent.mp3");
 vent.loop = true; // Permet de jouer le son en boucle
 vent.volume = 0.5; // Ajuste le volume si nécessaire (entre 0 et 1)
 
@@ -30,7 +30,7 @@ document.addEventListener("click", function startAudio() {
 });
 
 // Charger le son du clic gauche
-let clickSound = new Audio("tictac.mp3"); // Au clic
+let clickSound = new Audio("assets/sons/tictac.mp3"); // Au clic
 clickSound.volume = 0.8;
 
 // Jouer les 3 premières secondes du son
@@ -50,7 +50,7 @@ function playClickSound() {
 }
 
 // Charger le son du clic gauche
-let rightclickSound = new Audio("radio.mp3"); // Au clic
+let rightclickSound = new Audio("assets/sons/radio.mp3"); // Au clic
 rightclickSound.volume = 0.8;
 
 // Jouer les 3 premières secondes du son
@@ -69,7 +69,7 @@ function playRightClickSound() {
     });
 }
 
-let boomSound = new Audio("tir.mp3");
+let boomSound = new Audio("assets/sons/tir.mp3");
 boomSound.volume = 1.0;
 // Variables pour gérer les clics et le combo
 let leftClickCount = 0;
@@ -174,8 +174,11 @@ let vortices = [];
 img.onload = () => {
   const imgWidth = img.width;
   const imgHeight = img.height;
-  const x = canvas.width / 2 - imgWidth / 2;
+  //const x = canvas.width / 2 - imgWidth / 2;
+  const x = (canvas.width - imgWidth) / 4;
+
   const y = canvas.height / 2 - imgHeight / 2;
+  
 
   function drawImage(xDeform, yDeform, colorOffset) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
