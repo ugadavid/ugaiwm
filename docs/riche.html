@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suricates 360 - présentation déformée</title>
-    <link rel="stylesheet" href="../../styles/styles.css">
-    <link rel="stylesheet" href="styles/fractal.css">
-    
+    <title>Suricates 360</title>
+    <link rel="stylesheet" href="styles/styles.css">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Shepherd -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css">
+    <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
 </head>
 <body>
     <!-- Cookie Consent Banner -->
@@ -19,13 +20,13 @@
 
     <!-- Header Section -->
     <header>
-        <div class="logo"><a href="../../index.html"><img src="../../images/logo.png" alt="Suricates 360 logo" width="150"></a></div>
+        <div class="logo"><a href="#"><img src="images/logo.png" alt="Suricates 360 logo" width="150"></a></div>
         <nav>
-            <a href="../../index.html">Dashboard</a>
-            <a href="../../rise360.html">Rise 360</a>
-            <a href="../../inside.html">Review 360</a>
-            <a href="../../riche.html">Reach 360</a>
-            <a href="../../training.html">Suricates 360 Training</a>
+          <a href="index.html">Dashboard</a>
+          <a href="rise360.html">Rise 360</a>
+          <a href="inside.html">Review 360</a>
+          <a href="riche.html" class="active">Reach 360</a>
+          <a href="training.html">Suricates 360 Training</a>
         </nav>
         <div class="user-info">
             <select id="language-selector">
@@ -35,7 +36,7 @@
             </select>
             <button>Add Team Members to Your Trial</button>
             <div class="profile">
-                <span><a href="../../profile.html">DA</a></span>
+                <span><a href="profile.html">DA</a></span>
             </div>
         </div>
     </header>
@@ -44,15 +45,17 @@
     <div class="content-wrapper">
         <!-- Sidebar -->
         <aside>
-            <button class="create-btn"><i class="fa-regular fa-user"></i></i> Pages persos</button>
-            <h3>David</h3>
+            <button class="create-btn"><i class="fas fa-plus"></i> Create New</button>
             <ul>
-                <li><a href="index.html"><i class="fa-solid fa-house"></i>Accueil</a></li>
-                <li><a href="loik.html"><i class="fa-regular fa-comments"></i>TensorFlow.js</a></li>
-                <li><a href="fractal.html"><i class="fa-solid fa-barcode"></i>Fractales I</a></li>
-                <li><a href="fractaltorus.html"><i class="fa-solid fa-barcode"></i>Fractales II</a></li>
-                <li><a href="tensflor.html"><i class="fa-regular fa-comment-dots"></i>Tensflor++</a></li>
-                <li><a href="https://www.linkedin.com/in/davidsubileau/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a></li>
+                <li><a href="#"><i class="fas fa-folder"></i> All Content</a></li>
+                <li><a href="#"><i class="fas fa-share-alt"></i> Shared With Me</a></li>
+                <li><a href="#"><i class="fas fa-star"></i> My Shortcuts</a></li>
+            </ul>
+            <h3>Suricates 360 Trial Team</h3>
+            <ul>
+                <li><a href="#"><i class="fas fa-lock"></i> Private</a></li>
+                <li><a href="#"><i class="fas fa-users"></i> Team</a></li>
+                <li><a href="#"><i class="fas fa-trash-alt"></i> Deleted</a></li>
             </ul>
         </aside>
 
@@ -67,13 +70,13 @@
             <!-- Intro Section -->
             <section class="intro-card course-card">
                 <div class="intro-info course-info">
-                  <h1>Les fractales avec Canva sont devenues un jeu d'enfant.</h1>
-                  <canvas id="TorusCanvas"></canvas>
+                    <h2 id="riche-wm">Rich 360</h2>
+                    <p id="riche-desc-1">Oups... Vous voilà arrivés sur une page encore en travaux ! <i class="fa-solid fa-radiation"></i></p>
+                    <p id="riche-desc-2">Bienvenue dans notre version moderne de l'Internet des années 90 : cette bonne vieille page "En cours de construction". Vous savez, celle avec les gros gifs de pelleteuses qui creusent sans fin, et des panneaux "Danger" un peu partout. On a pensé que ce petit clin d'œil rétro vous plairait... et puis, soyons honnêtes, on n'a pas encore tout fini (eh oui, même les révolutionnaires de l'éducation ont leurs moments de procrastination).</p>
+                    <p id="riche-desc-3">Mais pas d'inquiétude ! On est en plein travail (ou on fait semblant, selon l'heure de la journée) pour construire une expérience absolument fantastique ici. Donc, si vous tombez sur cette page, c'est que vous êtes soit très curieux, soit vous avez cliqué un peu trop tôt. On vous promet que, bientôt, cette page sera aussi impressionnante que le reste de notre plateforme.</p>
+                    <p id="riche-desc-4">En attendant, imaginez de grandes choses : des outils éducatifs qui brillent, des fonctionnalités révolutionnaires qui changent la donne, et un soupçon de magie (ou juste des lignes de code qui, espérons-le, fonctionnent). Revenez nous voir bientôt, et vous verrez par vous-même tout ce qu'on a préparé.</p>
+                    <p id="riche-desc-5">Merci de votre patience, et souvenez-vous : même les révolutions prennent parfois un peu de temps. 😉</p>
                 </div>
-            </section>
-            <section class="intro-card course-card">
-                <div class="main-buttons"><button onClick="location.href='fractaltorus.html'">Précédent</button>
-                    <button onClick="location.href='tensflor.html'">Suivant</button></div>
             </section>
 
             
@@ -83,9 +86,11 @@
     <!-- Footer Section -->
     <footer>
         <div class="footer-links">
-            <a href="#">Qui sommes-nous ?</a>
-            <a href="#">CGV</a>
-            <a href="#">Politique de confidentialité</a>
+            <a href="whoarewe.html">Who are we ?</a>
+            <a href="termsandconditions.html">Terms and Conditions</a>
+            <a href="privacypolicy.html">Privacy Policy</a>
+            <a href="sitemap.html">Site Map</a>
+            <a href="#" id="start-tour">Help</a>
             <a href="#" id="modify-cookies">Modify Cookie Preferences</a>
         </div>
         <div class="social-links">
@@ -147,7 +152,7 @@
     // Function to load JSON translation
     async function loadTranslation(language) {
     try {
-        const response = await fetch(`../../lang/${language}.json`);
+        const response = await fetch(`lang/${language}.json`);
         const translations = await response.json();
 
         if (document.getElementById("welcome-message")) {
@@ -175,6 +180,7 @@
         }
     }
 
+
     // Load saved language or default to 'en'
     const savedLanguage = getCookie("language") || "en";
     loadTranslation(savedLanguage);
@@ -184,15 +190,77 @@
         loadTranslation(this.value);
     });
     </script>
-    
 
-    <!-- Import TensorFlow.js library -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript"></script>
-    <!-- Load the coco-ssd model to use to recognize things in images -->
-    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd" defer></script>
+<script>
+    // Initialiser Shepherd avec l'effet de voile gris (modal overlay)
+    const tour = new Shepherd.Tour({
+      defaultStepOptions: {
+        cancelIcon: {
+          enabled: true
+        },
+        classes: 'class-name-override',
+        scrollTo: { behavior: 'smooth', block: 'center' },
+        highlightElement: true, // Mettre en avant l'élément sélectionné
+        modalOverlayOpeningPadding: 10, // Espace autour de l'élément mis en avant
+        modalOverlayOpeningRadius: 5,  // Bordures arrondies
+      },
+      useModalOverlay: true // Active le voile gris sur le reste de la page
+    });
 
+    // Ajouter les étapes avec focus et voile
+    tour.addStep({
+      title: 'Étape 1',
+      text: "Bienvenue sur Suricate 360 !<br/>Accès aux pages perso d'Anas",
+      attachTo: {
+        element: '#step-1',
+        on: 'bottom'
+      },
+      buttons: [
+        {
+          text: 'Suivant',
+          action: tour.next
+        }
+      ]
+    });
 
-    <!-- Import the page's JavaScript to do some stuff -->
-    <script src="scripts/fractaltorus.js"></script>
+    tour.addStep({
+      title: 'Étape 2',
+      text: "Accès aux pages perso de Serge-Patrice<br/>C'est du sérieux !",
+      attachTo: {
+        element: '#step-2',
+        on: 'right'
+      },
+      buttons: [
+        {
+          text: 'Précédent',
+          action: tour.back
+        },
+        {
+          text: 'Suivant',
+          action: tour.next
+        }
+      ]
+    });
+
+    tour.addStep({
+      title: 'Étape 3',
+      text: "Accès aux pages perso de David<br/>Attention déjanté ! :D",
+      attachTo: {
+        element: '#step-3',
+        on: 'left'
+      },
+      buttons: [
+        {
+          text: 'Terminer',
+          action: tour.complete
+        }
+      ]
+    });
+
+    // Démarrer le tutoriel au clic
+    document.getElementById('start-tour').addEventListener('click', function() {
+      tour.start();
+    });
+  </script>
 </body>
 </html>

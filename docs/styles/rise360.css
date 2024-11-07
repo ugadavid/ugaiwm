@@ -20,7 +20,7 @@ header {
   border-bottom: 1px solid #e2e2e2;
 }
 
-.logo {
+.logo, .logo a:visited {
   font-weight: bold;
   font-size: 22px;
   color: #333;
