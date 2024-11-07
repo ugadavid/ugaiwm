@@ -1,35 +1,207 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Blog sur les Chatbots IA et les Sciences Cognitives</title>
+    <title>Suricates 360 - Serge-Patrice - Blog sur les chatbots IA et les sciences cognitives</title>
+    <link rel="stylesheet" href="../../styles/styles.css">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookie-banner" class="cookie-banner" style="display: none;">
+        <p>We use cookies to enhance your experience on our website. By continuing to browse, you accept our <a href="#">cookie policy</a>.</p>
+        <button id="accept-cookies" class="cookie-btn">Accept Cookies</button>
+    </div>
 
-    <nav>
-        <a href="index.html">Accueil</a>
-        <a href="mpcreativite.html">Où IA la langue, on parle de créativité pédagogique</a>
-        <a href="https://www.linkedin.com/in/serge-patrice-kokora/" target="_blank">LinkedIn</a>
-        <a href="fichiers/monCV.pdf" target="_blank">MON CV</a>
-    </nav>
+    <!-- Header Section -->
+    <header>
+        <div class="logo"><a href="../../index.html"><img src="../../images/logo.png" alt="Suricates 360 logo" width="150"></a></div>
+        <nav>
+            <a href="#" class="active">Dashboard</a>
+            <a href="../../rise360.html">Rise 360</a>
+            <a href="../../inside.html">Review 360</a>
+            <a href="#">Reach 360</a>
+            <a href="#">Suricates 360 Training</a>
+        </nav>
+        <div class="user-info">
+            <select id="language-selector">
+                <option value="en">English</option>
+                <option value="fr">Français</option>
+                <!-- Ajouter d'autres langues ici -->
+            </select>
+            <button>Add Team Members to Your Trial</button>
+            <div class="profile">
+                <span><a href="../../profile.html">DA</a></span>
+            </div>
+        </div>
+    </header>
 
-    <!-- Section sur les Chatbots IA comme Assistant/Tuteur Pédagogique -->
-    <section id="chatbots-ia">
-        <h2>Les Chatbots IA comme assistant/tuteur pédagogique</h2>
-        <p>Imaginez un étudiant nommé Lucas, qui commence son parcours universitaire dans un domaine qui le passionne mais où il se sent vite submergé. Ses premières semaines sont marquées par des cours intensifs, une grande quantité d'informations nouvelles et des concepts complexes. Dans cette période d’adaptation difficile, Lucas découvre un allié inattendu : un chatbot IA. Programmé pour répondre à des questions de cours, fournir des explications simplifiées et même proposer des exercices pratiques, ce chatbot devient un véritable tuteur pédagogique virtuel.</p>
-        <p>Lucas commence à utiliser ce chatbot lors de ses révisions. Quand il ne comprend pas un concept, il pose des questions, et l’IA répond avec précision et pédagogie. Elle peut adapter ses réponses au niveau de Lucas, le guidant pas à pas pour qu’il assimile progressivement les concepts. De plus, le chatbot peut proposer des exercices interactifs, réviser des erreurs et donner des astuces. Au fur et à mesure, Lucas prend confiance en lui, et son expérience d’apprentissage devient plus agréable.</p>
-        <p>Les chatbots IA comme celui-ci redéfinissent l’apprentissage en le rendant plus accessible et en fournissant un soutien 24/7. Grâce à eux, chaque étudiant peut bénéficier d’un accompagnement adapté, recevoir des retours immédiats et progresser à son propre rythme.</p>
-    </section>
+    <!-- Sidebar and Main Content -->
+    <div class="content-wrapper">
+        <!-- Sidebar -->
+        <aside>
+            <button class="create-btn"><i class="fa-regular fa-user"></i></i> Pages persos</button>
+            <h3>Serge-Patrice</h3>
+            <ul>
+                <li><a href="index.html"><i class="fa-solid fa-house"></i>Accueil</a></li>
+                <li><a href="index.html#loisirs"><i class="fa-regular fa-futbol"></i>Mes loisirs</a></li>
+                <li><a href="index.html#liens-ressources"><i class="fa-solid fa-book-open-reader"></i>Ressources & liens pour l'ingénieur pédagogique</a></li>
+                <li><a href="monblog.html"><i class="fa-solid fa-blog"></i>Mon blog</a></li>
+                <li><a href="mpcreativite.html"><i class="fa-solid fa-brain"></i>Où IA la langue, on parle de créativité pédagogique</a></li>
+                <li><a href="https://www.linkedin.com/in/serge-patrice-kokora/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a></li>
+                <li><a href="fichiers/monCV.pdf" target="_blank"><i class="fa-regular fa-file"></i>Mon CV</a></li>
+                
+                
+            </ul>
+        </aside>
 
-    <!-- Section sur les Sciences Cognitives et l'IA pour Rehausser le Niveau en Langues Étrangères -->
-    <section id="sciences-cognitives-ia">
-        <h2>Les Sciences Cognitives et l'IA pour rehausser le niveau en langues étrangères</h2>
-        <p>Dans une salle de classe virtuelle, un groupe d’apprenants en langue étrangère se connecte pour une expérience éducative unique. Grâce aux sciences cognitives et à l’intelligence artificielle, le programme d’apprentissage est taillé sur mesure pour chaque étudiant. Ce système d’IA, inspiré des recherches en neurosciences et en psychologie cognitive, analyse les progrès des apprenants et ajuste les exercices et le vocabulaire en fonction de leurs performances.</p>
-        <p>Sophie, une apprenante, avait toujours eu du mal à apprendre les langues. Mais avec ce nouvel outil, elle remarque des améliorations spectaculaires. L’IA lui propose des exercices de mémorisation basés sur la répétition espacée, un principe cognitif qui aide à mieux retenir les informations. Lorsque Sophie a des difficultés, le programme adapte le contenu pour renforcer les concepts mal compris.</p>
-        <p>Ce mariage des sciences cognitives et de l'IA aide les apprenants à vaincre leurs blocages linguistiques et à progresser de manière plus rapide et efficace. Les techniques personnalisées et dynamiques permettent aux étudiants de se concentrer sur leurs faiblesses, rendant l'apprentissage des langues non seulement possible, mais agréable et motivant.</p>
-    </section>
+        <!-- Main Content -->
+        <main>
+            <div class="content-header">
+                <input type="text" placeholder="Search all content">
+                <button class="search-btn"><i class="fas fa-search"></i></button>
+                <button id="toggle-theme" class="theme-btn">Dark Mode</button>
+            </div>
+            
+            <!-- Intro Section -->
+            <section class="intro-card course-card">
+                <div class="intro-info course-info">
 
+                    <!-- Menu de navigation -->
+                    
+
+                    <h1>Blog sur les chatbots IA et les sciences cognitives</h1>
+                    <!-- Section sur les Chatbots IA comme Assistant/Tuteur Pédagogique -->
+                    <section id="chatbots-ia">
+                        <h2>Les Chatbots IA comme assistant/tuteur pédagogique</h2>
+                        <p>Imaginez un étudiant nommé Lucas, qui commence son parcours universitaire dans un domaine qui le passionne mais où il se sent vite submergé. Ses premières semaines sont marquées par des cours intensifs, une grande quantité d'informations nouvelles et des concepts complexes. Dans cette période d’adaptation difficile, Lucas découvre un allié inattendu : un chatbot IA. Programmé pour répondre à des questions de cours, fournir des explications simplifiées et même proposer des exercices pratiques, ce chatbot devient un véritable tuteur pédagogique virtuel.</p>
+                        <p>Lucas commence à utiliser ce chatbot lors de ses révisions. Quand il ne comprend pas un concept, il pose des questions, et l’IA répond avec précision et pédagogie. Elle peut adapter ses réponses au niveau de Lucas, le guidant pas à pas pour qu’il assimile progressivement les concepts. De plus, le chatbot peut proposer des exercices interactifs, réviser des erreurs et donner des astuces. Au fur et à mesure, Lucas prend confiance en lui, et son expérience d’apprentissage devient plus agréable.</p>
+                        <p>Les chatbots IA comme celui-ci redéfinissent l’apprentissage en le rendant plus accessible et en fournissant un soutien 24/7. Grâce à eux, chaque étudiant peut bénéficier d’un accompagnement adapté, recevoir des retours immédiats et progresser à son propre rythme.</p>
+                    </section>
+
+                    <!-- Section sur les Sciences Cognitives et l'IA pour Rehausser le Niveau en Langues Étrangères -->
+                    <section id="sciences-cognitives-ia">
+                        <h2>Les Sciences Cognitives et l'IA pour rehausser le niveau en langues étrangères</h2>
+                        <p>Dans une salle de classe virtuelle, un groupe d’apprenants en langue étrangère se connecte pour une expérience éducative unique. Grâce aux sciences cognitives et à l’intelligence artificielle, le programme d’apprentissage est taillé sur mesure pour chaque étudiant. Ce système d’IA, inspiré des recherches en neurosciences et en psychologie cognitive, analyse les progrès des apprenants et ajuste les exercices et le vocabulaire en fonction de leurs performances.</p>
+                        <p>Sophie, une apprenante, avait toujours eu du mal à apprendre les langues. Mais avec ce nouvel outil, elle remarque des améliorations spectaculaires. L’IA lui propose des exercices de mémorisation basés sur la répétition espacée, un principe cognitif qui aide à mieux retenir les informations. Lorsque Sophie a des difficultés, le programme adapte le contenu pour renforcer les concepts mal compris.</p>
+                        <p>Ce mariage des sciences cognitives et de l'IA aide les apprenants à vaincre leurs blocages linguistiques et à progresser de manière plus rapide et efficace. Les techniques personnalisées et dynamiques permettent aux étudiants de se concentrer sur leurs faiblesses, rendant l'apprentissage des langues non seulement possible, mais agréable et motivant.</p>
+                    </section>
+                    
+                </div>
+            </section>
+            
+
+            
+        </main>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-links">
+            <a href="#">Qui sommes-nous ?</a>
+            <a href="#">CGV</a>
+            <a href="#">Politique de confidentialité</a>
+            <a href="#" id="modify-cookies">Modify Cookie Preferences</a>
+        </div>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Function to get a cookie by name
+        function getCookie(name) {
+            let cookieArr = document.cookie.split(";");
+            for (let i = 0; i < cookieArr.length; i++) {
+                let cookiePair = cookieArr[i].split("=");
+                if (name === cookiePair[0].trim()) {
+                    return decodeURIComponent(cookiePair[1]);
+                }
+            }
+            return null;
+        }
+
+        // Display cookie banner if consent is not given
+        if (!getCookie("userConsent")) {
+            document.getElementById("cookie-banner").style.display = "block";
+        }
+
+        document.getElementById("accept-cookies").addEventListener("click", function() {
+            document.getElementById("cookie-banner").style.display = "none";
+            document.cookie = "userConsent=true; max-age=31536000; path=/";
+            // Setting default values for language and theme
+            document.cookie = "language=en; max-age=31536000; path=/";
+            document.cookie = "theme=light; max-age=31536000; path=/";
+        });
+
+        // Modify cookie preferences link
+        document.getElementById("modify-cookies").addEventListener("click", function() {
+            document.getElementById("cookie-banner").style.display = "block";
+        });
+
+        // Toggle theme button
+        document.getElementById("toggle-theme").addEventListener("click", function() {
+            const body = document.body;
+            const currentTheme = body.classList.contains("dark") ? "dark" : "light";
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            body.classList.toggle("dark");
+            document.cookie = `theme=${newTheme}; max-age=31536000; path=/`;
+            document.getElementById("toggle-theme").textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
+        });
+
+        // Apply saved theme on page load
+        const savedTheme = getCookie("theme");
+        if (savedTheme === "dark") {
+            document.body.classList.add("dark");
+            document.getElementById("toggle-theme").textContent = "Light Mode";
+        }
+
+
+    // Function to load JSON translation
+    async function loadTranslation(language) {
+    try {
+        const response = await fetch(`../../lang/${language}.json`);
+        const translations = await response.json();
+
+        if (document.getElementById("welcome-message")) {
+            document.getElementById("welcome-message").textContent = translations.welcome_message;
+        }
+        if (document.getElementById("description-1")) {
+            document.getElementById("description-1").textContent = translations.description_1;
+        }
+        if (document.getElementById("description-2")) {
+            document.getElementById("description-2").textContent = translations.description_2;
+        }
+        if (document.getElementById("search-input")) {
+            document.getElementById("search-input").setAttribute("placeholder", translations.search_placeholder);
+        }
+        if (document.getElementById("toggle-theme")) {
+            document.getElementById("toggle-theme").textContent = document.body.classList.contains("dark")
+                ? translations.light_mode
+                : translations.dark_mode;
+        }
+
+        // Store language preference in a cookie
+        document.cookie = `language=${language}; max-age=31536000; path=/`;
+        } catch (error) {
+            console.error("Error loading translation:", error);
+        }
+    }
+
+    // Load saved language or default to 'en'
+    const savedLanguage = getCookie("language") || "en";
+    loadTranslation(savedLanguage);
+
+    // Event listener for language change
+    document.getElementById("language-selector").addEventListener("change", function() {
+        loadTranslation(this.value);
+    });
+    </script>
+    
 </body>
 </html>
