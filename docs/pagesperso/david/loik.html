@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suricates 360 - présentation déformée</title>
+    <title>Pages perso - David::tensorflow 1</title>
     <link rel="stylesheet" href="../../styles/styles.css">
     <link rel="stylesheet" href="styles/loik.css">
     
@@ -48,11 +48,12 @@
             <h3>David</h3>
             <ul>
                 <li><a href="index.html"><i class="fa-solid fa-house"></i>Accueil</a></li>
-                <li><a href="loik.html"><i class="fa-regular fa-comments"></i>TensorFlow.js</a></li>
-                <li><a href="fractal.html"><i class="fa-solid fa-barcode"></i>Fractales I</a></li>
-                <li><a href="fractaltorus.html"><i class="fa-solid fa-barcode"></i>Fractales II</a></li>
-                <li><a href="tensflor.html"><i class="fa-regular fa-comment-dots"></i>Tensflor++</a></li>
-                <li><a href="https://www.linkedin.com/in/davidsubileau/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a></li>
+              <li><a href="loik.html"><i class="fa-solid fa-camera"></i>TensorFlow.js</a></li>
+              <li><a href="tensflor.html"><i class="fa-solid fa-video"></i>Tensflor++</a></li>
+              <li><a href="tensflor++.html"><i class="fa-solid fa-photo-film"></i>Tensflor++ expliqué</a></li>
+              <li><a href="fractal.html"><i class="fa-regular fa-face-grin-tongue-wink"></i>Fractales I</a></li>
+              <li><a href="fractaltorus.html"><i class="fa-solid fa-face-grin-tongue-wink"></i>Fractales II</a></li>
+              <li><a href="https://www.linkedin.com/in/davidsubileau/" target="_blank"><i class="fa-brands fa-linkedin"></i>LinkedIn</a></li>
             </ul>
         </aside>
 
@@ -74,14 +75,15 @@
             
                     <div id="liveView" class="camView">
                         <button id="webcamButton">Activer WebCam</button>
-                        <video id="webcam" autoplay muted width="640" height="280"></video>
+                        <video id="webcam" autoplay muted width="640" height="480"></video>
                     </div>
+                    <p>L'ami avec lequel je travaille autour de l'IA le vendredi s'appelle Loïk, d'où le nom de cette page.</p>
                 </section>
                 </div>
             </section>
             <section class="intro-card course-card">
                 <div class="main-buttons"><button onClick="location.href='index.html'">Précédent</button>
-                    <button onClick="location.href='fractal.html'">Suivant</button></div>
+                    <button onClick="location.href='tensflor.html'">Suivant</button></div>
             </section>
 
             
@@ -89,11 +91,15 @@
     </div>
 
     <!-- Footer Section -->
+    <!-- Footer Section -->
     <footer>
         <div class="footer-links">
-            <a href="#">Qui sommes-nous ?</a>
-            <a href="#">CGV</a>
-            <a href="#">Politique de confidentialité</a>
+            <a href="../../whoarewe.html">Who are we ?</a>
+            <a href="../../termsandconditions.html">Terms and Conditions</a>
+            <a href="../../privacypolicy.html">Privacy Policy</a>
+            <a href="../../sitemap.html">Site Map</a>
+            <a href="javascript:openPopup('../../contact.html')">Contact</a>
+            <a href="#" id="start-tour">Help</a>
             <a href="#" id="modify-cookies">Modify Cookie Preferences</a>
         </div>
         <div class="social-links">
@@ -202,5 +208,6 @@
 
     <!-- Import the page's JavaScript to do some stuff -->
     <script src="scripts/loik.js" defer></script>
+    <script src="../../scripts/popup.js"></script>
 </body>
 </html>
