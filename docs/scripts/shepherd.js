@@ -1,3 +1,4 @@
+"use strict";
 //  Ne s'exécute qu'appelé par la home
 if (window.location.href.includes("index.html")) {
 

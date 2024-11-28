@@ -1,3 +1,4 @@
+"use strict";
 // Toggle theme button
 document.getElementById("toggle-theme").addEventListener("click", function() {
   const body = document.body;

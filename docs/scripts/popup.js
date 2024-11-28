@@ -1,3 +1,4 @@
+"use strict";
 function openPopup(url) {
   // Ouvre une nouvelle fenêtre avec une taille définie
   window.open(

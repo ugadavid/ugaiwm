@@ -1,3 +1,4 @@
+"use strict";
 const classifier = knnClassifier.create();
 const webcamElement = document.getElementById('webcam');
 
@@ -38,7 +39,6 @@ async function app() {
   while (true) {
     if (classifier.getNumClasses() > 0) {
       const img = await webcam.capture();
-
       // Get the activation from mobilenet from the webcam.
       const activation = net.infer(img, 'conv_preds');
       // Get the most likely class and confidence from the classifier module.
@@ -49,7 +49,6 @@ async function app() {
         prediction: ${classes[result.label]}\n
         probability: ${result.confidences[result.label]}
       `;
-
       // Dispose the tensor to release the memory.
       img.dispose();
     }

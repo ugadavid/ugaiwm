@@ -1,3 +1,4 @@
+"use strict";
 // Function to get a cookie by name
 function getCookie(name) {
   let cookieArr = document.cookie.split(";");

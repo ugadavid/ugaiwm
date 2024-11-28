@@ -1,109 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suricates 360</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Shepherd -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css">
-    <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
-</head>
-<body>
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display: none;">
-        <p>We use cookies to enhance your experience on our website. By continuing to browse, you accept our <a href="#">cookie policy</a>.</p>
-        <button id="accept-cookies" class="cookie-btn">Accept Cookies</button>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Suricates 360</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+		<!-- Shepherd -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css" />
+		<script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
+	</head>
+	<body>
+		<!-- Cookie Consent Banner -->
+		<div id="cookie-banner" class="cookie-banner" style="display: none;">
+			<p>We use cookies to enhance your experience on our website. By continuing to browse, you accept our <a href="#">cookie policy</a>.</p>
+			<button id="accept-cookies" class="cookie-btn">Accept Cookies</button>
+		</div>
 
-    <!-- Header Section -->
-    <header>
-        <div class="logo"><a href="#"><img src="images/logo.png" alt="Suricates 360 logo" width="150"></a></div>
-        <nav>
-          <a href="index.html">Dashboard</a>
-          <a href="rise360.html">Rise 360</a>
-          <a href="inside.html">Review 360</a>
-          <a href="riche.html" class="active">Reach 360</a>
-          <a href="training.html">Suricates 360 Training</a>
-        </nav>
-        <div class="user-info">
-            <select id="language-selector">
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-                <!-- Ajouter d'autres langues ici -->
-            </select>
-            <button>Add Team Members to Your Trial</button>
-            <div class="profile">
-                <span><a href="profile.html">DA</a></span>
-            </div>
-        </div>
-    </header>
+		<!-- Header Section -->
+		<header>
+			<div class="logo">
+				<a href="#"><img src="images/logo.png" alt="Suricates 360 logo" width="150" /></a>
+			</div>
+			<nav>
+				<a href="index.html">Dashboard</a>
+				<a href="rise360.html">Rise 360</a>
+				<a href="inside.html">Review 360</a>
+				<a href="riche.html" class="active">Reach 360</a>
+				<a href="training.html">Suricates 360 Training</a>
+			</nav>
+			<div class="user-info">
+				<select id="language-selector">
+					<option value="en">English</option>
+					<option value="fr">Français</option>
+					<!-- Ajouter d'autres langues ici -->
+				</select>
+				<button>Add Team Members to Your Trial</button>
+				<div class="profile">
+					<span><a href="profile.html">DA</a></span>
+				</div>
+			</div>
+		</header>
 
-    <!-- Sidebar and Main Content -->
-    <div class="content-wrapper">
-        <!-- Sidebar -->
-        <aside>
-            <button class="create-btn"><i class="fas fa-plus"></i> Create New</button>
-            <ul>
-                <li><a href="#"><i class="fas fa-folder"></i> All Content</a></li>
-                <li><a href="#"><i class="fas fa-share-alt"></i> Shared With Me</a></li>
-                <li><a href="#"><i class="fas fa-star"></i> My Shortcuts</a></li>
-            </ul>
-            <h3>Suricates 360 Trial Team</h3>
-            <ul>
-                <li><a href="#"><i class="fas fa-lock"></i> Private</a></li>
-                <li><a href="#"><i class="fas fa-users"></i> Team</a></li>
-                <li><a href="#"><i class="fas fa-trash-alt"></i> Deleted</a></li>
-            </ul>
-        </aside>
+		<!-- Sidebar and Main Content -->
+		<div class="content-wrapper">
+			<!-- Sidebar -->
+			<aside>
+				<button class="create-btn"><i class="fas fa-plus"></i> Create New</button>
+				<ul>
+					<li>
+						<a href="#"><i class="fas fa-folder"></i> All Content</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-share-alt"></i> Shared With Me</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-star"></i> My Shortcuts</a>
+					</li>
+				</ul>
+				<h3>Suricates 360 Trial Team</h3>
+				<ul>
+					<li>
+						<a href="#"><i class="fas fa-lock"></i> Private</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-users"></i> Team</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-trash-alt"></i> Deleted</a>
+					</li>
+				</ul>
+			</aside>
 
-        <!-- Main Content -->
-        <main>
-            <div class="content-header">
-                <input type="text" placeholder="Search all content">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
-                <button id="toggle-theme" class="theme-btn">Dark Mode</button>
-            </div>
-            
-            <!-- Intro Section -->
-            <section class="intro-card course-card">
-                <div class="intro-info course-info">
-                    <h2 id="riche-wm">Rich 360</h2>
-                    <p id="riche-desc-1">Oups... Vous voilà arrivés sur une page encore en travaux ! <i class="fa-solid fa-radiation"></i></p>
-                    <p id="riche-desc-2">Bienvenue dans notre version moderne de l'Internet des années 90 : cette bonne vieille page "En cours de construction". Vous savez, celle avec les gros gifs de pelleteuses qui creusent sans fin, et des panneaux "Danger" un peu partout. On a pensé que ce petit clin d'œil rétro vous plairait... et puis, soyons honnêtes, on n'a pas encore tout fini (eh oui, même les révolutionnaires de l'éducation ont leurs moments de procrastination).</p>
-                    <p id="riche-desc-3">Mais pas d'inquiétude ! On est en plein travail (ou on fait semblant, selon l'heure de la journée) pour construire une expérience absolument fantastique ici. Donc, si vous tombez sur cette page, c'est que vous êtes soit très curieux, soit vous avez cliqué un peu trop tôt. On vous promet que, bientôt, cette page sera aussi impressionnante que le reste de notre plateforme.</p>
-                    <p id="riche-desc-4">En attendant, imaginez de grandes choses : des outils éducatifs qui brillent, des fonctionnalités révolutionnaires qui changent la donne, et un soupçon de magie (ou juste des lignes de code qui, espérons-le, fonctionnent). Revenez nous voir bientôt, et vous verrez par vous-même tout ce qu'on a préparé.</p>
-                    <p id="riche-desc-5">Merci de votre patience, et souvenez-vous : même les révolutions prennent parfois un peu de temps. 😉</p>
-                </div>
-            </section>
+			<!-- Main Content -->
+			<main>
+				<div class="content-header">
+					<input type="text" placeholder="Search all content" />
+					<button class="search-btn"><i class="fas fa-search"></i></button>
+					<button id="toggle-theme" class="theme-btn">Dark Mode</button>
+				</div>
 
-            
-        </main>
-    </div>
+				<!-- Intro Section -->
+				<section class="intro-card course-card">
+					<div class="intro-info course-info">
+						<h2 id="riche-wm">Rich 360</h2>
+						<p id="riche-desc-1">Oups... Vous voilà arrivés sur une page encore en travaux ! <i class="fa-solid fa-radiation"></i></p>
+						<p id="riche-desc-2">
+							Bienvenue dans notre version moderne de l'Internet des années 90 : cette bonne vieille page "En cours de construction". Vous savez, celle avec les gros gifs de pelleteuses qui creusent sans fin, et des panneaux
+							"Danger" un peu partout. On a pensé que ce petit clin d'œil rétro vous plairait... et puis, soyons honnêtes, on n'a pas encore tout fini (eh oui, même les révolutionnaires de l'éducation ont leurs moments de
+							procrastination).
+						</p>
+						<p id="riche-desc-3">
+							Mais pas d'inquiétude ! On est en plein travail (ou on fait semblant, selon l'heure de la journée) pour construire une expérience absolument fantastique ici. Donc, si vous tombez sur cette page, c'est que vous
+							êtes soit très curieux, soit vous avez cliqué un peu trop tôt. On vous promet que, bientôt, cette page sera aussi impressionnante que le reste de notre plateforme.
+						</p>
+						<p id="riche-desc-4">
+							En attendant, imaginez de grandes choses : des outils éducatifs qui brillent, des fonctionnalités révolutionnaires qui changent la donne, et un soupçon de magie (ou juste des lignes de code qui, espérons-le,
+							fonctionnent). Revenez nous voir bientôt, et vous verrez par vous-même tout ce qu'on a préparé.
+						</p>
+						<p id="riche-desc-5">Merci de votre patience, et souvenez-vous : même les révolutions prennent parfois un peu de temps. 😉</p>
+					</div>
+				</section>
+			</main>
+		</div>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-links">
-            <a href="whoarewe.html">Who are we ?</a>
-            <a href="termsandconditions.html">Terms and Conditions</a>
-            <a href="privacypolicy.html">Privacy Policy</a>
-            <a href="sitemap.html">Site Map</a>
-            <a href="#" id="start-tour">Help</a>
-            <a href="#" id="modify-cookies">Modify Cookie Preferences</a>
-        </div>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-    </footer>
+		<!-- Footer Section -->
+		<footer>
+			<div class="footer-links">
+				<a href="whoarewe.html">Who are we ?</a>
+				<a href="termsandconditions.html">Terms and Conditions</a>
+				<a href="privacypolicy.html">Privacy Policy</a>
+				<a href="sitemap.html">Site Map</a>
+				<a href="#" id="start-tour">Help</a>
+				<a href="#" id="modify-cookies">Modify Cookie Preferences</a>
+			</div>
+			<div class="social-links">
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+		</footer>
 
-    <script src="scripts/cookie.js"></script>
-    <script src="scripts/theme.js"></script>
-    <script src="scripts/translation.js"></script>
-    <script src="scripts/shepherd.js"></script>
-    <script src="scripts/popup.js"></script>
-</body>
+		<script src="scripts/cookie.js"></script>
+		<script src="scripts/theme.js"></script>
+		<script src="scripts/translation.js"></script>
+		<script src="scripts/shepherd.js"></script>
+		<script src="scripts/popup.js"></script>
+	</body>
 </html>

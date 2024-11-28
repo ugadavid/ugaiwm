@@ -1,3 +1,4 @@
+"use strict";
 // Initialiser Shepherd
 const tour = new Shepherd.Tour({
   defaultStepOptions: {

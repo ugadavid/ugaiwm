@@ -1,154 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Suricates 360</title>
-    <link rel="stylesheet" href="styles/styles.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Shepherd -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css">
-    <script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
-</head>
-<body>
-    <!-- Cookie Consent Banner -->
-    <div id="cookie-banner" class="cookie-banner" style="display: none;">
-        <p>We use cookies to enhance your experience on our website. By continuing to browse, you accept our <a href="#">cookie policy</a>.</p>
-        <button id="accept-cookies" class="cookie-btn">Accept Cookies</button>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Suricates 360</title>
+		<link rel="stylesheet" href="styles/styles.css" />
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+		<!-- Shepherd -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/css/shepherd.css" />
+		<script src="https://cdn.jsdelivr.net/npm/shepherd.js@8.3.1/dist/js/shepherd.min.js"></script>
+	</head>
+	<body>
+		<!-- Cookie Consent Banner -->
+		<div id="cookie-banner" class="cookie-banner" style="display: none;">
+			<p>We use cookies to enhance your experience on our website. By continuing to browse, you accept our <a href="#">cookie policy</a>.</p>
+			<button id="accept-cookies" class="cookie-btn">Accept Cookies</button>
+		</div>
 
-    <!-- Header Section -->
-    <header>
-        <div class="logo"><a href="index.html"><img src="images/logo.png" alt="Suricates 360 logo" width="150"></a></div>
-        <nav>
-            <a href="#" class="active">Dashboard</a>
-            <a href="rise360.html">Rise 360</a>
-            <a href="inside.html">Review 360</a>
-            <a href="#">Reach 360</a>
-            <a href="#">Suricates 360 Training</a>
-        </nav>
-        <div class="user-info">
-            <select id="language-selector">
-                <option value="en">English</option>
-                <option value="fr">Français</option>
-                <!-- Ajouter d'autres langues ici -->
-            </select>
-            <button>Add Team Members to Your Trial</button>
-            <div class="profile">
-                <span><a href="profile.html">DA</a></span>
-            </div>
-        </div>
-    </header>
+		<!-- Header Section -->
+		<header>
+			<div class="logo">
+				<a href="index.html"><img src="images/logo.png" alt="Suricates 360 logo" width="150" /></a>
+			</div>
+			<nav>
+				<a href="#" class="active">Dashboard</a>
+				<a href="rise360.html">Rise 360</a>
+				<a href="inside.html">Review 360</a>
+				<a href="#">Reach 360</a>
+				<a href="#">Suricates 360 Training</a>
+			</nav>
+			<div class="user-info">
+				<select id="language-selector">
+					<option value="en">English</option>
+					<option value="fr">Français</option>
+					<!-- Ajouter d'autres langues ici -->
+				</select>
+				<button>Add Team Members to Your Trial</button>
+				<div class="profile">
+					<span><a href="profile.html">DA</a></span>
+				</div>
+			</div>
+		</header>
 
-    <!-- Sidebar and Main Content -->
-    <div class="content-wrapper">
-        <!-- Sidebar -->
-        <aside>
-            <button class="create-btn"><i class="fas fa-plus"></i> Create New</button>
-            <ul>
-                <li><a href="#"><i class="fas fa-folder"></i> All Content</a></li>
-                <li><a href="#"><i class="fas fa-share-alt"></i> Shared With Me</a></li>
-                <li><a href="#"><i class="fas fa-star"></i> My Shortcuts</a></li>
-            </ul>
-            <h3>Suricates 360 Trial Team</h3>
-            <ul>
-                <li><a href="#"><i class="fas fa-lock"></i> Private</a></li>
-                <li><a href="#"><i class="fas fa-users"></i> Team</a></li>
-                <li><a href="#"><i class="fas fa-trash-alt"></i> Deleted</a></li>
-            </ul>
-        </aside>
+		<!-- Sidebar and Main Content -->
+		<div class="content-wrapper">
+			<!-- Sidebar -->
+			<aside>
+				<button class="create-btn"><i class="fas fa-plus"></i> Create New</button>
+				<ul>
+					<li>
+						<a href="#"><i class="fas fa-folder"></i> All Content</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-share-alt"></i> Shared With Me</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-star"></i> My Shortcuts</a>
+					</li>
+				</ul>
+				<h3>Suricates 360 Trial Team</h3>
+				<ul>
+					<li>
+						<a href="#"><i class="fas fa-lock"></i> Private</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-users"></i> Team</a>
+					</li>
+					<li>
+						<a href="#"><i class="fas fa-trash-alt"></i> Deleted</a>
+					</li>
+				</ul>
+			</aside>
 
-        <!-- Main Content -->
-        <main>
-            <div class="content-header">
-                <input type="text" placeholder="Search all content">
-                <button class="search-btn"><i class="fas fa-search"></i></button>
-                <button id="toggle-theme" class="theme-btn">Dark Mode</button>
-            </div>
-            
-            <!-- Intro Section -->
-            <section class="intro-card course-card">
-                <div class="intro-info course-info">
-                    <h1 id="pp-wm">Plan du Site - Naviguez avec Style</h1>
-                    <p id="pp-desc-0">Bienvenue sur notre plan du site, une carte (presque) parfaite pour vous aider à explorer toutes les merveilles que nous avons à offrir. Pour rendre ça élégant, on a décidé de le présenter sous forme d'un petit guide interactif qui vous donnera l'impression de faire un voyage à travers notre univers éducatif. Imaginez ça comme une sorte de jeu de piste, mais sans les énigmes compliquées (ou presque).</p>
-                    <h2 id="pp-wm-1">Sections Principales</h2>
-                    
-                    <h3 id="pp-wm-1">1. Accueil</h3>
-                    <div class="map">
-                        <ul>
-                            <li><a href="#">Dashboard</a> : le point de départ de toutes les grandes idées.</li>
-                            <li><a href="#">Riz 360</a> : pour créer des contenus d'apprentissage interactifs qui vont surprendre tout le monde.</li>
-                            <li><a href="#">Review 360</a> : partagez, collaborez et obtenez des retours sur vos créations.</li>
-                            <li><a href="#">Riche 360</a> : parce qu'il n'y a pas de limite à ce qu'on peut apprendre.</li>
-                            <li><a href="#">Training</a> : s'entrainer c'est apprendre. N'est-ce pas ce que tu dis à tes élèves ?.</li>
-                        </ul>
-                    </div>
-                    
-                    <h3 id="pp-wm-2">2. Outils pédagogiques</h3>
-                    <div class="map">
-                        <ul>
-                            <li><a href="#">Générateur SCORM</a> : pour ceux qui rêvent de SCORM la nuit (et pour les autres aussi).</li>
-                            <li><a href="#">LMS intégré</a> : gérer des cours, des étudiants, et peut-être même votre stress (on l'espère).</li>
-                            <li><a href="#">Méthodologie enseignante</a> : des guides pour créer des séances impeccables sans vous arracher les cheveux.</li>
-                        </ul>
-                    </div>
-                    
-                    <h3 id="pp-wm-3">3. À propos</h3>
-                    <div class="map">
-                        <ul>
-                            <li><a href="#">Qui sommes-nous ?</a> : venez découvrir les trois prétentieux étudiants qui pensent révolutionner l'informatique éducative.</li>
-                            <li><a href="#">En cours de construction</a> : nos projets encore en travaux, avec un petit hommage aux années 90.</li>
-                            <li><a href="#">Conditions générales de vente</a> : parce que même les révolutionnaires ont besoin de termes et conditions.</li>
-                            <li><a href="#">Erreur 404</a> : l'endroit où vous finissez quand le destin vous joue des tours.</li>
-                        </ul>
-                    </div>
+			<!-- Main Content -->
+			<main>
+				<div class="content-header">
+					<input type="text" placeholder="Search all content" />
+					<button class="search-btn"><i class="fas fa-search"></i></button>
+					<button id="toggle-theme" class="theme-btn">Dark Mode</button>
+				</div>
 
-                    <h3 id="pp-wm-4">4. Contact & ressources</h3>
-                    <div class="map">
-                        <ul>
-                            <li><a href="#">Nous contacter</a> : besoin d'un coup de main ou simplement envie de nous dire bonjour ?</li>
-                            <li><a href="#">Réseaux sociaux</a> : retrouvez-nous sur nos plateformes préférées (on y poste des trucs sympas, promis).</li>
-                            <li><a href="#">FAQ</a> : des questions ? Des réponses (enfin, on espère).</li>
-                        </ul>
-                    </div>
+				<!-- Intro Section -->
+				<section class="intro-card course-card">
+					<div class="intro-info course-info">
+						<h1 id="pp-wm">Plan du Site - Naviguez avec Style</h1>
+						<p id="pp-desc-0">
+							Bienvenue sur notre plan du site, une carte (presque) parfaite pour vous aider à explorer toutes les merveilles que nous avons à offrir. Pour rendre ça élégant, on a décidé de le présenter sous forme d'un petit
+							guide interactif qui vous donnera l'impression de faire un voyage à travers notre univers éducatif. Imaginez ça comme une sorte de jeu de piste, mais sans les énigmes compliquées (ou presque).
+						</p>
+						<h2 id="pp-wm-1">Sections Principales</h2>
 
-                    <h3 id="pp-wm-5">5. Ressources d'apprentissage</h3>
-                    <div class="map">
-                        <ul>
-                            <li><a href="#">Tutoriels</a> : des vidéos, des guides, des astuces, pour que vous soyez toujours au top.</li>
-                            <li><a href="#">Docs techniques</a> : pour ceux qui aiment les détails (ou les longs après-midi d'étude).</li>
-                            <li><a href="#">Communauté</a> : rejoignez le club, partagez vos idées, et laissez-vous inspirer.</li>
-                        </ul>
-                    </div>
-                    <p>&nbsp;</p><!-- Pour le souvenir :D -->
-                    <p id="pp-desc-6">Voilà, c'est tout notre univers sur un seul écran. Cliquez, explorez, et découvrez tout ce que nous avons à offrir, sans vous perdre cette fois-ci (enfin, on fait de notre mieux) ! Si vous avez l'impression de tourner en rond, notre petite boussole en bas de chaque page est là pour vous ramener à bon port. 😉</p>
-                </div>
-            </section>
-        </main>
-    </div>
+						<h3 id="pp-wm-1-1">1. Accueil</h3>
+						<div class="map">
+							<ul>
+								<li><a href="#">Dashboard</a> : le point de départ de toutes les grandes idées.</li>
+								<li><a href="#">Riz 360</a> : pour créer des contenus d'apprentissage interactifs qui vont surprendre tout le monde.</li>
+								<li><a href="#">Review 360</a> : partagez, collaborez et obtenez des retours sur vos créations.</li>
+								<li><a href="#">Riche 360</a> : parce qu'il n'y a pas de limite à ce qu'on peut apprendre.</li>
+								<li><a href="#">Training</a> : s'entrainer c'est apprendre. N'est-ce pas ce que tu dis à tes élèves ?.</li>
+							</ul>
+						</div>
 
-    <!-- Footer Section -->
-    <footer>
-        <div class="footer-links">
-            <a href="whoarewe.html">Who are we ?</a>
-            <a href="termsandconditions.html">Terms and Conditions</a>
-            <a href="privacypolicy.html">Privacy Policy</a>
-            <a href="sitemap.html">Site Map</a>
-            <a href="#" id="start-tour">Help</a>
-            <a href="#" id="modify-cookies">Modify Cookie Preferences</a>
-        </div>
-        <div class="social-links">
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        </div>
-    </footer>
+						<h3 id="pp-wm-2">2. Outils pédagogiques</h3>
+						<div class="map">
+							<ul>
+								<li><a href="#">Générateur SCORM</a> : pour ceux qui rêvent de SCORM la nuit (et pour les autres aussi).</li>
+								<li><a href="#">LMS intégré</a> : gérer des cours, des étudiants, et peut-être même votre stress (on l'espère).</li>
+								<li><a href="#">Méthodologie enseignante</a> : des guides pour créer des séances impeccables sans vous arracher les cheveux.</li>
+							</ul>
+						</div>
 
-    <script src="scripts/cookie.js"></script>
-    <script src="scripts/theme.js"></script>
-    <script src="scripts/translation.js"></script>
-    <script src="scripts/shepherd.js"></script>
-    <script src="scripts/popup.js"></script>
-</body>
+						<h3 id="pp-wm-3">3. À propos</h3>
+						<div class="map">
+							<ul>
+								<li><a href="#">Qui sommes-nous ?</a> : venez découvrir les trois prétentieux étudiants qui pensent révolutionner l'informatique éducative.</li>
+								<li><a href="#">En cours de construction</a> : nos projets encore en travaux, avec un petit hommage aux années 90.</li>
+								<li><a href="#">Conditions générales de vente</a> : parce que même les révolutionnaires ont besoin de termes et conditions.</li>
+								<li><a href="#">Erreur 404</a> : l'endroit où vous finissez quand le destin vous joue des tours.</li>
+							</ul>
+						</div>
+
+						<h3 id="pp-wm-4">4. Contact &amp; ressources</h3>
+						<div class="map">
+							<ul>
+								<li><a href="#">Nous contacter</a> : besoin d'un coup de main ou simplement envie de nous dire bonjour ?</li>
+								<li><a href="#">Réseaux sociaux</a> : retrouvez-nous sur nos plateformes préférées (on y poste des trucs sympas, promis).</li>
+								<li><a href="#">FAQ</a> : des questions ? Des réponses (enfin, on espère).</li>
+							</ul>
+						</div>
+
+						<h3 id="pp-wm-5">5. Ressources d'apprentissage</h3>
+						<div class="map">
+							<ul>
+								<li><a href="#">Tutoriels</a> : des vidéos, des guides, des astuces, pour que vous soyez toujours au top.</li>
+								<li><a href="#">Docs techniques</a> : pour ceux qui aiment les détails (ou les longs après-midi d'étude).</li>
+								<li><a href="#">Communauté</a> : rejoignez le club, partagez vos idées, et laissez-vous inspirer.</li>
+							</ul>
+						</div>
+						<p>&nbsp;</p>
+						<!-- Pour le souvenir :D -->
+						<p id="pp-desc-6">
+							Voilà, c'est tout notre univers sur un seul écran. Cliquez, explorez, et découvrez tout ce que nous avons à offrir, sans vous perdre cette fois-ci (enfin, on fait de notre mieux) ! Si vous avez l'impression de
+							tourner en rond, notre petite boussole en bas de chaque page est là pour vous ramener à bon port. 😉
+						</p>
+					</div>
+				</section>
+			</main>
+		</div>
+
+		<!-- Footer Section -->
+		<footer>
+			<div class="footer-links">
+				<a href="whoarewe.html">Who are we ?</a>
+				<a href="termsandconditions.html">Terms and Conditions</a>
+				<a href="privacypolicy.html">Privacy Policy</a>
+				<a href="sitemap.html">Site Map</a>
+				<a href="#" id="start-tour">Help</a>
+				<a href="#" id="modify-cookies">Modify Cookie Preferences</a>
+			</div>
+			<div class="social-links">
+				<a href="#"><i class="fab fa-facebook-f"></i></a>
+				<a href="#"><i class="fab fa-twitter"></i></a>
+				<a href="#"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+		</footer>
+
+		<script src="scripts/cookie.js"></script>
+		<script src="scripts/theme.js"></script>
+		<script src="scripts/translation.js"></script>
+		<script src="scripts/shepherd.js"></script>
+		<script src="scripts/popup.js"></script>
+	</body>
 </html>

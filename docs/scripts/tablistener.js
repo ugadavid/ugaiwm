@@ -1,3 +1,4 @@
+"use strict";
 // Récupère tous les éléments des onglets
 const tabs = document.querySelectorAll('.tab');
 const tabContents = document.querySelectorAll('.tab-content');

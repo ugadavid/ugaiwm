@@ -1,3 +1,4 @@
+"use strict";
 // Function to load JSON translation
 async function loadTranslation(language) {
   try {
