@@ -241,7 +241,7 @@ main {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.3s ease;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .course-card:hover {
@@ -362,11 +362,6 @@ nav a.active {
 nav a.active.dark {
   border-bottom: 2px solid #bb86fc;
   color: #bb86fc;
-}
-
-.course-card {
-  background-color: white;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .course-card.dark {
