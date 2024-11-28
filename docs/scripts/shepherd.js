@@ -1,5 +1,5 @@
 //  Ne s'exécute qu'appelé par la home
-if (window.location.pathname === "/index.html") {
+if (window.location.href.includes("index.html")) {
 
   // Initialiser Shepherd avec l'effet de voile gris (modal overlay)
   const tour = new Shepherd.Tour({
