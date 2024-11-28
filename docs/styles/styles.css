@@ -221,7 +221,6 @@ main {
   width: 100%;
   max-width: 900px;
   margin-bottom: 20px;
-  background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
@@ -425,7 +424,7 @@ footer.dark {
 .intro-card.dark {
   background-color: #282828;
   border: 1px solid #444;
-  color: red;
+  color: #e0e0e0;
 }
 
 .course-card img {
