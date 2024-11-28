@@ -1,4 +1,3 @@
-"use strict";
 let appRunning = true;
 let appInterval;
 const classifier = knnClassifier.create();
