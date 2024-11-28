@@ -1,0 +1,38 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.webcam-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+#webcam {
+  border: 2px solid #6c757d;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.confidence-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#console {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+  color: #343a40;
+}
+.chart-container {
+  width: 80%;
+  margin: 20px auto;
+}
