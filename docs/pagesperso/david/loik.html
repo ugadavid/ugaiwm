@@ -109,95 +109,11 @@
         </div>
     </footer>
 
-    <script>
-        // Function to get a cookie by name
-        function getCookie(name) {
-            let cookieArr = document.cookie.split(";");
-            for (let i = 0; i < cookieArr.length; i++) {
-                let cookiePair = cookieArr[i].split("=");
-                if (name === cookiePair[0].trim()) {
-                    return decodeURIComponent(cookiePair[1]);
-                }
-            }
-            return null;
-        }
-
-        // Display cookie banner if consent is not given
-        if (!getCookie("userConsent")) {
-            document.getElementById("cookie-banner").style.display = "block";
-        }
-
-        document.getElementById("accept-cookies").addEventListener("click", function() {
-            document.getElementById("cookie-banner").style.display = "none";
-            document.cookie = "userConsent=true; max-age=31536000; path=/";
-            // Setting default values for language and theme
-            document.cookie = "language=en; max-age=31536000; path=/";
-            document.cookie = "theme=light; max-age=31536000; path=/";
-        });
-
-        // Modify cookie preferences link
-        document.getElementById("modify-cookies").addEventListener("click", function() {
-            document.getElementById("cookie-banner").style.display = "block";
-        });
-
-        // Toggle theme button
-        document.getElementById("toggle-theme").addEventListener("click", function() {
-            const body = document.body;
-            const currentTheme = body.classList.contains("dark") ? "dark" : "light";
-            const newTheme = currentTheme === "dark" ? "light" : "dark";
-            body.classList.toggle("dark");
-            document.cookie = `theme=${newTheme}; max-age=31536000; path=/`;
-            document.getElementById("toggle-theme").textContent = newTheme === "dark" ? "Light Mode" : "Dark Mode";
-        });
-
-        // Apply saved theme on page load
-        const savedTheme = getCookie("theme");
-        if (savedTheme === "dark") {
-            document.body.classList.add("dark");
-            document.getElementById("toggle-theme").textContent = "Light Mode";
-        }
-
-
-    // Function to load JSON translation
-    async function loadTranslation(language) {
-    try {
-        const response = await fetch(`../../lang/${language}.json`);
-        const translations = await response.json();
-
-        if (document.getElementById("welcome-message")) {
-            document.getElementById("welcome-message").textContent = translations.welcome_message;
-        }
-        if (document.getElementById("description-1")) {
-            document.getElementById("description-1").textContent = translations.description_1;
-        }
-        if (document.getElementById("description-2")) {
-            document.getElementById("description-2").textContent = translations.description_2;
-        }
-        if (document.getElementById("search-input")) {
-            document.getElementById("search-input").setAttribute("placeholder", translations.search_placeholder);
-        }
-        if (document.getElementById("toggle-theme")) {
-            document.getElementById("toggle-theme").textContent = document.body.classList.contains("dark")
-                ? translations.light_mode
-                : translations.dark_mode;
-        }
-
-        // Store language preference in a cookie
-        document.cookie = `language=${language}; max-age=31536000; path=/`;
-        } catch (error) {
-            console.error("Error loading translation:", error);
-        }
-    }
-
-    // Load saved language or default to 'en'
-    const savedLanguage = getCookie("language") || "en";
-    loadTranslation(savedLanguage);
-
-    // Event listener for language change
-    document.getElementById("language-selector").addEventListener("change", function() {
-        loadTranslation(this.value);
-    });
-    </script>
+    <script src="../../scripts/cookie.js"></script>
+    <script src="../../scripts/theme.js"></script>
+    <script src="../../scripts/translation.js"></script>
+    <script src="../../scripts/shepherd.js"></script>
+    <script src="../../scripts/popup.js"></script>
     
 
     <!-- Import TensorFlow.js library -->
@@ -208,6 +124,5 @@
 
     <!-- Import the page's JavaScript to do some stuff -->
     <script src="scripts/loik.js" defer></script>
-    <script src="../../scripts/popup.js"></script>
 </body>
 </html>
