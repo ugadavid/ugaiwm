@@ -237,7 +237,6 @@ main {
 }
 
 .course-card {
-  background-color: white;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
