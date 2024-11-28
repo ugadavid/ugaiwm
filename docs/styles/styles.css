@@ -553,3 +553,14 @@ canvas {
 .m10 {
   margin-bottom: 20px !important; 
 }
+
+
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Deux colonnes de taille égale */
+  gap: 20px; /* Espace entre les divs */
+}
+
+.box {
+  padding: 10px;
+}
