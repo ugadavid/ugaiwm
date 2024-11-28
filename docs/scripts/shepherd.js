@@ -1,6 +1,9 @@
 "use strict";
 //  Ne s'exécute qu'appelé par la home
-if (window.location.href.includes("index.html")) {
+if (
+  window.location.pathname === "/ugaiwm/" ||  // Cas où tu arrives à la racine du projet
+  window.location.pathname === "/ugaiwm/index.html" // Cas où index.html est explicitement mentionné
+) {
 
   // Initialiser Shepherd avec l'effet de voile gris (modal overlay)
   const tour = new Shepherd.Tour({
