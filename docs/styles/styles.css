@@ -425,7 +425,7 @@ footer.dark {
 .intro-card.dark {
   background-color: #282828;
   border: 1px solid #444;
-  color: #e0e0e0;
+  color: red;
 }
 
 .course-card img {
