@@ -564,3 +564,9 @@ canvas {
 .box {
   padding: 10px;
 }
+
+.box p {
+  margin: 5px 0;
+  color: #666;
+  font-size: 14px;
+}
